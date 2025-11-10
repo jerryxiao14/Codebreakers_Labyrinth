@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"/Users/andrew/School/CSE381/Project/Codebreakers_Labyrinth/Codebreakers/Content/Maps/MenuMap.umap",
+				"/Users/andrew/School/CSE381/Project/Codebreakers_Labyrinth/Codebreakers/Content/Maps/EasyLevelMap.umap",
+				"/Users/andrew/School/CSE381/Project/Codebreakers_Labyrinth/Codebreakers/Content/Maps/HardLevelMap.umap",
+				"/Users/andrew/School/CSE381/Project/Codebreakers_Labyrinth/Codebreakers/Content/Widgets/Menus/W_MainMenu.uasset",
+				"/Users/andrew/School/CSE381/Project/Codebreakers_Labyrinth/Codebreakers/Content/Widgets/Menus/W_InstructionMenu.uasset"
+			]
+		}
+	]
+}
