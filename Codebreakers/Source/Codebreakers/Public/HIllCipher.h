@@ -13,7 +13,9 @@ public:
 
     UFUNCTION(BlueprintCallable, Category = "HillCipher")
     static FString EncryptHillCipher(const TArray<int32>& FlatMatrix, int32 N, const FString& Plaintext);
-
+    
+    UFUNCTION(BlueprintCallable, Category = "HillCipher")
+    static FString MatrixToMultilineString(const TArray<int32>& FlatMatrix, int32 N);
 private:
 
     static int32 Convert(TCHAR C);

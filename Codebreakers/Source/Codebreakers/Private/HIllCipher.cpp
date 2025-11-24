@@ -124,3 +124,29 @@ FString UHillCipher::EncryptHillCipher(
 
     return Result;
 }
+
+FString UHillCipher::MatrixToMultilineString(const TArray<int32>& FlatMatrix, int32 N)
+{
+    FString Output;
+    if (FlatMatrix.Num() != N * N) {
+        UE_LOG(LogTemp, Error, TEXT("MatrixToMultilineString: Matrix dimension mismatch!"));
+		return "";
+    }
+
+    for (int32 Row = 0; Row < N; Row++) {
+        for (int32 Col = 0; Col < N; Col++) {
+            int32 Index = Row * N + Col;
+            Output += FString::FromInt(FlatMatrix[Index]);
+            if (Col < N - 1) {
+                Output += TEXT(" ");
+            }
+        }
+
+
+        if (Row < N - 1) {
+            Output += TEXT("\n");
+        }
+    }
+
+    return Output;
+}
