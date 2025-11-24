@@ -63,6 +63,11 @@ FString UHillCipher::EncryptHillCipher(
     int32 N,
     const FString& Plaintext)
 {
+
+    if (GEngine)
+    {
+        GEngine->AddOnScreenDebugMessage(-1, 20.f, FColor::Green, Plaintext);
+    }
     if (FlatMatrix.Num() != N * N)
     {
         UE_LOG(LogTemp, Error, TEXT("EncryptHillCipher: Matrix dimension mismatch!"));
@@ -121,7 +126,14 @@ FString UHillCipher::EncryptHillCipher(
 
     for (int32 Val : Encrypted)
         Result.AppendChar(ConvertBack(Val));
+    UE_LOG(LogTemp, Warning, TEXT("EncryptHillCipher Result: %s"), *Result);
+    if (GEngine)
+    {
+        GEngine->AddOnScreenDebugMessage(-1, 20.f, FColor::Green, Result);
 
+        FString LengthString = FString::Printf(TEXT("Result length: %d"), Result.Len());
+        GEngine->AddOnScreenDebugMessage(-1, 20.f, FColor::Yellow, LengthString);
+    }
     return Result;
 }
 
@@ -147,6 +159,6 @@ FString UHillCipher::MatrixToMultilineString(const TArray<int32>& FlatMatrix, in
             Output += TEXT("\n");
         }
     }
-
+    
     return Output;
 }
